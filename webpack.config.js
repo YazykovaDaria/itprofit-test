@@ -14,8 +14,10 @@ module.exports = {
   devtool,
   devServer: {
     port: 3000,
+    liveReload: true,
     open: true,
     hot: true,
+    historyApiFallback: true,
     client: {
       overlay: {
         errors: false,
@@ -24,11 +26,14 @@ module.exports = {
     },
   },
   entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index.ts')],
+  resolve: {
+    extensions: ['.tsx', '.ts', '.js'],
+  },
   output: {
     path: path.resolve(__dirname, 'dist'),
     clean: true,
     filename: '[name].[contenthash].js',
-    assetModuleFilename: 'assets/[name][ext]'
+    assetModuleFilename: 'assets/[name][ext]',
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -48,7 +53,7 @@ module.exports = {
         test: /\.(ts|tsx)$/i,
         loader: 'ts-loader',
         exclude: ['/node_modules/'],
-    },
+      },
       {
         test: /\.(c|sa|sc)ss$/i,
         use: [
@@ -69,8 +74,8 @@ module.exports = {
         test: /\.woff2?$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'fonts/[name][ext]'
-        }
+          filename: 'fonts/[name][ext]',
+        },
       },
       {
         test: /\.(jpe?g|png|webp|gif|svg)$/i,
@@ -86,16 +91,16 @@ module.exports = {
               },
               pngquant: {
                 quality: [0.65, 0.90],
-                speed: 4
+                speed: 4,
               },
               gifsicle: {
                 interlaced: false,
               },
               webp: {
-                quality: 75
+                quality: 75,
               },
-            }
-          }
+            },
+          },
         ],
         type: 'asset/resource',
       },
