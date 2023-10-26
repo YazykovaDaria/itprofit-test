@@ -6,9 +6,74 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
 </head>
-<body>
-<div> example </div>
+<body class="body">
 
+
+<div class="container">
+
+  <!-- <div> Test task for vacancies
+  <a href="https://rabota.by/vacancy/88270956?hhtmFrom=chat">Frontend developer (ES/TS/React)</a>
+
+  </div> -->
+<button class="btn" id="open-modal">Open modal</button>
+
+  <form id="form" class="form">
+
+    <h2 class="title">Registration form</h2>
+
+
+    <div class="form-group">
+      <label for="name">Your name</label>
+      <input type="text" name="name" class="form-group__input">
+      <!-- <p class="error">It's reguared field</p> -->
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" name="email" class="form-group__input">
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Phone number</label>
+      <input type="text" name="phone" class="form-group__input">
+    </div>
+
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea name="message" id="mes" cols="10" rows="5" placeholder="Enter your message" class="form-group__input area"></textarea>
+  </div>
+
+
+  <button type="submit" class="btn">Submit</button>
+  </form>
+
+  <div style="height: 700px;"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Labore at sapiente, voluptatibus vitae similique itaque nobis quo cumque exercitationem pariatur, quas amet necessitatibus, repellat inventore nesciunt sunt illum id nostrum!</div>
+
+</div>
+
+
+
+<div class="modal js-close" id="modal">
+<section class="modal__body">
+  <div class="js-close">
+    <svg width="12" height="12" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" class="modal__icon js-close">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M7.42618 6.00003L11.7046 1.72158C12.0985 1.32775 12.0985 0.689213 11.7046 0.295433C11.3108 -0.0984027 10.6723 -0.0984027 10.2785 0.295433L5.99998 4.57394L1.72148 0.295377C1.32765 -0.098459 0.68917 -0.098459 0.295334 0.295377C-0.0984448 0.689213 -0.0984448 1.32775 0.295334 1.72153L4.57383 5.99997L0.295334 10.2785C-0.0984448 10.6723 -0.0984448 11.3108 0.295334 11.7046C0.68917 12.0985 1.32765 12.0985 1.72148 11.7046L5.99998 7.42612L10.2785 11.7046C10.6723 12.0985 11.3108 12.0985 11.7046 11.7046C12.0985 11.3108 12.0985 10.6723 11.7046 10.2785L7.42618 6.00003Z"/>
+      </svg>
+  </div>
+
+<p class="title">Important!</p>
+<p class="subtitle">Do you want to get a job for this candidate?</p>
+
+<div class="flex-justify">
+  <button class="btn js-close">yes</button>
+  <button class="btn js-close">of course</button>
+</div>
+</section>
+
+
+
+</div>
 
 
 </body>
