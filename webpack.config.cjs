@@ -21,13 +21,13 @@ module.exports = {
     client: {
       overlay: {
         errors: false,
-        warnings: true,
+        warnings: false,
       },
     },
   },
   entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index.ts')],
   resolve: {
-    extensions: ['.tsx', '.ts', '.js'],
+    extensions: ['.ts', '.js'],
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
