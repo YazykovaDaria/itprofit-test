@@ -1,3 +1,4 @@
+import IMask from 'imask';
 import getValidate from '../../lib/validator';
 import registration from '../../api/registration';
 import setScrollAndActive from '../../lib/setScrollAndActive';
@@ -68,7 +69,18 @@ const submitHandler = async (e: Event) => {
   setScrollAndActive(false, spinnerEl);
 };
 
+const addMask = () => {
+  const phoneInput = formEl.querySelector('.js-phone');
+
+  const maskOptions = {
+    mask: '+{375}(00)000-00-00',
+  };
+  IMask(phoneInput, maskOptions);
+};
+
 const form = () => {
+  addMask();
+
   const inputs: NodeList | undefined = formEl?.querySelectorAll(inputClass);
 
   inputs?.forEach((el) => el.addEventListener('blur', blurHandler));
