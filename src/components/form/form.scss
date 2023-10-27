@@ -3,11 +3,15 @@
   flex-direction: column;
   justify-content: center;
   gap: 1rem;
-  max-width: 500px;
+  width: 350px;
   padding: 1rem;
-  margin: 10px;
+  margin: 10px auto;
   border: rgb(72, 2, 91) 1px solid;
   border-radius: 1rem;
+
+  @media(max-width: 460px) {
+    width: 200px;
+  }
 }
 
 .form-group {
@@ -22,14 +26,14 @@ padding: 5px;
 border: blue 1px solid;
 border-radius: 10px;
 
-&:focus {
+  &:focus {
   outline: none;
   border-color: green;
-}
+  }
 
-&.invalid {
+  &.invalid {
   border-color: red;
-}
+  }
 }
 
 .error {
@@ -40,20 +44,4 @@ border-radius: 10px;
   resize: none;
   overflow: auto;
   height: 4rem;
-  scrollbar-width: thin;
-  scrollbar-color: #654c93 #0b33ad;
-
-  //watch how to do beautifyl scrollbar
-
-  // &::-webkit-scrollbar {
-  //   width: 8px; /* Set the width of the scrollbar */
-  // }
-
-  // &::-webkit-scrollbar-track {
-  //   background-color: #b112d8; /* Set the background color of the scrollbar track */
-  // }
-
-  // &::-webkit-scrollbar-thumb {
-  //   background-color: rgb(224, 217, 217);
-  // }
 }
