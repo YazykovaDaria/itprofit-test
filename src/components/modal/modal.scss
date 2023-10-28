@@ -9,11 +9,21 @@
   height: 100%;
   background-color: black;
   cursor: pointer;
+  animation: close 1s ease-out;
 
   &.active {
   animation: open 1s ease-out forwards;
   }
+}
 
+.modal--spinner {
+  opacity: 0.8;
+  animation: none;
+
+  &.active {
+    right: 0;
+    animation: none;
+    }
 }
 
 .modal__body {
@@ -54,5 +64,15 @@ cursor: pointer;
 
   100% {
     right: 0;
+  }
+}
+
+@keyframes close {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: 200rem;
   }
 }
