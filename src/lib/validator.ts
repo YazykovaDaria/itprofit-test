@@ -18,6 +18,11 @@ const emailRegex = /^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^
 
 const checkValidation = (state: InitState) => Object.keys(state).every((item) => state[item] === true);
 
+const checkPhoneData = (phone: string): string => {
+  const maskPattern = '+375 (__) ___ __ __';
+  return phone === maskPattern ? '' : phone;
+};
+
 const getValidate = (initState: InitState): Validator => {
   const isValidFields = initState;
   const isNotDirty = initState;
@@ -25,7 +30,8 @@ const getValidate = (initState: InitState): Validator => {
   const validator = (val: string, type: keyof InitState):FormValidation => {
     let message = '';
     isNotDirty[type] = true;
-    const value = val.trim();
+
+    const value = type === 'phone' ? checkPhoneData(val.trim()) : val.trim();
 
     if (value.length < 1) {
       message = errorMessages.requared;
