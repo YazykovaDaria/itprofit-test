@@ -73,7 +73,9 @@ const addMask = () => {
   const phoneInput = formEl.querySelector('.js-phone');
 
   const maskOptions = {
-    mask: '+{375}(00)000-00-00',
+    mask: '+{375} (00) 000 00 00',
+    lazy: false,
+    placeholderChar: '_',
   };
   IMask(phoneInput, maskOptions);
 };
